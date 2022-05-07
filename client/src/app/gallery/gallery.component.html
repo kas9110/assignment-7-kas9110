@@ -1,0 +1,7 @@
+<h1>Welcome to the task app home page!</h1>
+<h4> Your tasks are below. Click them to make changes, or scroll to the bottom to add one</h4>
+  <app-task *ngFor = 'let Task of TaskList'
+    [Task]='Task'
+    >
+  </app-task>
+  <app-newtask></app-newtask>

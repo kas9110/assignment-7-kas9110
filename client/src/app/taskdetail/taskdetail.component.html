@@ -1,0 +1,23 @@
+
+
+<h3> Task: {{task.task}} </h3>
+<h3> Description: {{task.description}} </h3>
+<div *ngIf="!editing">
+<br>
+<a class = "btn btn-link" href="/#/">Back to all tasks</a>
+<button class="btn btn-link" (click)="setEditMode(true)">Edit</button>
+<button class="btn btn-link" (click)="deleteTask()">Delete</button>
+</div>
+
+<div *ngIf="editing">
+<form #form="ngForm" (ngSubmit)="updateTask(form.value)">
+        <div class="form-group">
+              <label for="titleField">Title:</label>
+              <input #title name="titleField" class="form-control" [ngModel]="task.task">
+              <br />
+              <label for="descField">Description:</label>
+              <input name="descField" class="form-control" [ngModel]="task.description">
+           </div>
+           <button type="submit">save</button>
+</form>
+</div>

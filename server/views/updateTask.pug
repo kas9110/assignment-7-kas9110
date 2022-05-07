@@ -1,0 +1,14 @@
+.row 
+    .col-md-6.col-md-offset-3 
+      p Task: #{task.task}
+      p Description: #{task.description}
+      p Created: #{task.createdAt}
+      form(method = 'POST' action="/users/"+task._id)
+        div.form-group
+            label(for='task') Task Name: 
+            input#task.form-control(type='text', value = task.task , name='task')
+        div.form-group
+            label(for='description') Description: 
+            input#description.form-control(type='text', value= task.description , name='description')
+        button.btn.btn-primary(type='submit') Update your task
+

@@ -1,0 +1,12 @@
+<form #form="ngForm" (ngSubmit)="saveTask(form.value)">
+    <div class="form-group">
+        <br>
+        <h3> Add a new task</h3>
+          <label for="titleField">Title:</label>
+          <input #title name="titleField" class="form-control" [ngModel]="task.task">
+          <br />
+          <label for="descField">Description:</label>
+          <input name="descField" class="form-control" [ngModel]="task.description">
+       </div>
+       <button type="submit">save</button>
+</form>

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  .row 
+    each task in tasks 
+      .col-sm-4 
+        p Task: #{task.task}
+        p Description: #{task.description}
+        a(href='/users/'+task._id) Task Information
+
+  include newtask 
+//-link the new task page.pug page here    
+//-This takes the information that is passed in the query string and displays is on the page .

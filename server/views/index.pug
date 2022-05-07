@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to the main page. You can add a task here and it will display on the next page. Tasks do not persist yet!
+   body
+    form(action='/users', method='GET')
+      div
+        label(for='/') What task do you want to add?
+        |     
+        input#task(name='task', value='Hi') 
+      |   
+      div
+        label(for='/') What is a brief description of the task?
+        |     
+        input#description(name='description', value='Mom')
+      |   
+      div
+        button Add Task
+
+//- this is the main screen that then passes the task and the description values
